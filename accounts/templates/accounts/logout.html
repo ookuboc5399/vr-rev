@@ -1,0 +1,17 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<div class="">
+    <div class="">
+        <p class="">ログアウトしますか？</p>
+        <form method="post" class="">
+            {% csrf_token %}
+            <div class="">
+                <button class="" type="submit">ログアウト</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

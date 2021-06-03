@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>VR Rev.</title>
+</head>
+
+<body>
+    <nav class="">
+        <div>
+            <a class="" href="/">ホーム</a>
+        </div>
+        {% if user.is_authenticated %}
+        <div>
+            <a class="" href="{% url 'account_logout' %}">ログアウト</a>
+        </div>
+        {% else %}
+        <div>
+            <a class="" href="{% url 'account_signup' %}">サインアップ</a>
+        </div>
+        <div>
+            <a class="" href="{% url 'account_login' %}">ログイン</a>
+        </div>
+        {% endif %}
+    </nav>
+
+    <main>
+        <div class="">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="">
+        footer
+    </footer>
+
+    {% block extra_js %}
+    {% endblock %}
+
+</body>
+
+</html>
