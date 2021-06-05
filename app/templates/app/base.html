@@ -11,11 +11,24 @@
     <title>VR Rev.</title>
 </head>
 
-<body>
-    <nav class="">
+<body class="flex flex-col min-h-screen">
+    <nav class="flex justify-end h-20 z-20 items-center space-x-4">
         <div>
-            <a class="" href="/">ホーム</a>
+            <a class="" href="/">HOME</a>
         </div>
+        <div>
+            <a class="" href="{% url 'Concept' %}">CONCEPT</a>
+        </div>
+        <div>
+            <a class="" href="{% url 'Blog' %}">BLOG</a>
+        </div>
+        <div>
+            <a class="" href="{% url 'Account' %}">ACCOUNT</a>
+        </div>
+        <div>
+            <a class="" href="{% url 'contact' %}">CONTACT</a>
+        </div>
+
         {% if user.is_authenticated %}
         <div>
             <a class="" href="{% url 'account_logout' %}">ログアウト</a>
@@ -24,21 +37,28 @@
         <div>
             <a class="" href="{% url 'account_signup' %}">サインアップ</a>
         </div>
-        <div>
+        <div class="pr-8">
             <a class="" href="{% url 'account_login' %}">ログイン</a>
         </div>
         {% endif %}
     </nav>
 
-    <main>
-        <div class="">
+    <main class="flex-1">
+        <div class="bg-gray-800">
             {% block content %}
             {% endblock %}
         </div>
     </main>
 
     <footer class="">
-        footer
+        <div class="flex justify-center ">
+            <img class="h-32" src="../static/images/VR Rev.2.png">
+        </div>
+        <div class="flex space-x-4 m-4">
+            <a href="/">CONTACT</a>
+            <a href="/">よくあるご質問</a>
+            <a href="/">プライバシーポリシー</a>
+        </div>
     </footer>
 
     {% block extra_js %}

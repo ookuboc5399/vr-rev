@@ -1,0 +1,25 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<div class="">
+    <div class="col-start-1">
+        {% for post in post_data %}
+            <div class="bg-white">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.content|truncatechars:100 }}</p>
+                <button class="btn btn-blue">詳細</button>
+            </div>
+            <div class="bg-white">
+                {{ post.created|date }} by {{ post.author }}
+            </div>
+            {% if post.image %}
+                <img class="flex items-center" src="{{ post.image.url }}" alt="">
+            {% endif %}
+            </div>
+            <a class="stretched-link" href=""{% url 'post_detail' post.id %}"></a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

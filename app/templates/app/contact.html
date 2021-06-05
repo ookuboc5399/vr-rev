@@ -1,0 +1,29 @@
+{% extends "app/base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+<div class="card text-center contact mx-auto rounded">
+    <li style="background-image: url( '{% static "images/CONTACT.png" %}' );">
+    <div class="contact-img">
+        <h2 class="mb-4">CONTACT</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                {% render_field form.name class="form-control" placeholder="名前" %}
+            </div>
+            <div class="mb-3">
+                {% render_field form.email class="form-control" placeholder="メールアドレス" %}
+            </div>
+            <div class="mb-3">
+                {% render_field form.message class="form-control" placeholder="メッセージ" %}
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-warning" type="submit"><i class="fas fa-paper-plane"></i> 送信する</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
