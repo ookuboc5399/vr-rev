@@ -1,25 +1,55 @@
 {% extends "app/base.html" %}
 
 {% block content %}
-
-<div class="">
-    <div class="col-start-1">
-        {% for post in post_data %}
-            <div class="bg-white">
-                <h2 class="card-title">{{ post.title }}</h2>
-                <p class="card-text">{{ post.content|truncatechars:100 }}</p>
-                <button class="btn btn-blue">詳細</button>
-            </div>
-            <div class="bg-white">
-                {{ post.created|date }} by {{ post.author }}
-            </div>
+<div class="container lg:max-w-4xl mx-auto">
+    {% for post in post_data %}
+        <div class="bg-white mb-10">
             {% if post.image %}
-                <img class="flex items-center" src="{{ post.image.url }}" alt="">
+                <img class="w-full h-96 object-cover" src="{{ post.image.url }}" alt="">
             {% endif %}
+            <div class="p-3">
+                <p>
+                    日付:{{ post.created|date }} 
+                </p>
+                <h2>
+                    {{ post.title }}
+                </h2>
+                <p>
+                    {{ post.content|truncatechars:100 }}
+                </p>
+                <a href="{% url 'post_detail' post.id %}">
+                    <button class="bg-blue-500">続きを読む</button>
+                </a>
             </div>
-            <a class="stretched-link" href=""{% url 'post_detail' post.id %}"></a>
-        {% endfor %}
+            
+    
+        </div>
+        
+    {% endfor %}
+</div>
+<!--
+<div class="container mx-auto box border text-center">
+    <div class="">
+        <div class="box border">
+            {% for post in post_data %}
+                <div class="bg-white  box border">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.content|truncatechars:100 }}</p>
+                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        詳細
+                    </button>
+                </div>
+                <div class="bg-white">
+                    {{ post.created|date }} by {{ post.author }}
+                </div>
+                {% if post.image %}
+                    <img class="content-center" src="{{ post.image.url }}" alt="">
+                {% endif %}
+                <a class="stretched-link" href="{% url 'post_detail' post.id %}"></a>
+            {% endfor %}
+        </div>
     </div>
 </div>
 
+-->
 {% endblock %}

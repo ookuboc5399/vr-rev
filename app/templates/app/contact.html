@@ -4,23 +4,41 @@
 
 {% block content %}
 
-<div class="card text-center contact mx-auto rounded">
-    <li style="background-image: url( '{% static "images/CONTACT.png" %}' );">
+<div class="text-center h-screen">
+ <!--   <div class="" style="background-image: url(../../static/images/CONTACT.png) "> </div>-->
+    <img
+        class="bg-no-repeat object-center"
+        src="../../static/images/CONTACT.png"
+        alt=""
+    />
+    <!--
+<li style="background-image: url( '{% static "images/CONTACT.png" %}' );">--> 
     <div class="contact-img">
-        <h2 class="mb-4">CONTACT</h2>
+        <h2 class="p-8 mb-4 text-3xl text-white">CONTACT</h2>
         <form method="post">
             {% csrf_token %}
-            <div class="mb-3">
+            <div class="mb-3 text-white">
+                <label class="block uppercase tracking-wide text-base font-bold mb-2" >
+                    お名前
+                </label>
                 {% render_field form.name class="form-control" placeholder="名前" %}
             </div>
-            <div class="mb-3">
+            <div class="mb-3 text-white">
+                <label class="block uppercase tracking-wide text-base font-bold mb-2" >
+                    メールアドレス
+                </label>
                 {% render_field form.email class="form-control" placeholder="メールアドレス" %}
             </div>
-            <div class="mb-3">
+            <div class="mb-3 text-white">
+                <label class="block uppercase tracking-wide text-base font-bold mb-2" >
+                    お問い合わせ内容
+                </label>
                 {% render_field form.message class="form-control" placeholder="メッセージ" %}
             </div>
             <div class="mb-3">
-                <button class="btn btn-warning" type="submit"><i class="fas fa-paper-plane"></i> 送信する</button>
+                <button class="bg-white hover:bg-blue-500 text-black font-semibold hover:text-white py-2 px-4  mb-8 border border-black hover:border-transparent rounded-full py-3 px-6">
+                    送信する
+                </button>
             </div>
         </form>
     </div>

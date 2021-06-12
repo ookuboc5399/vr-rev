@@ -32,13 +32,8 @@ class BLOGView(View):
 class BLOGDetailView(View):
     def get(self, request, *args, **kwargs):
         post_data = Blog.objects.get(id=self.kwargs['pk'])
-        return render(request, 'app/post_detail.html', {
+        return render(request, 'app/blog_detail.html', {
             'post_data': post_data
-        })
-
-class ACCOUNTView(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'app/account.html', {
         })
 
 class CONTACTView(View):
