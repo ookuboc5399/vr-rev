@@ -15,22 +15,20 @@ class Product(models.Model):
     def __str__(self):
         return self.title
 
-
-
-class Blog(models.Model):
-	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-	title = models.CharField("タイトル", max_length=200)
-	image = models.ImageField(upload_to='images', verbose_name='イメージ画像', null=True, blank=True)
-	content = models.TextField("本文")
-	created = models.DateTimeField("作成日", default=timezone.now)
-category = models.CharField(max_length=255,default='VR')
-
-def __str__(self):
-        return self.title
-
-
-class Caregory(models.Model):
+class Category(models.Model):
     name=models.CharField(max_length=255)
 
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.name
+
+class Blog(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField("タイトル", max_length=200)
+    image = models.ImageField(upload_to='images', verbose_name='イメージ画像', null=True, blank=True)
+    content = models.TextField("本文")
+    created = models.DateTimeField("作成日", default=timezone.now)
+    category = models.ForeignKey(Category,verbose_name='カテゴリ', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+

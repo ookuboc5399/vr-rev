@@ -91,3 +91,8 @@ class CONTACTView(View):
         return render(request, 'app/contact.html', {
             'form': form
         })
+
+class QUESTIONView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'app/question.html', {
+        })

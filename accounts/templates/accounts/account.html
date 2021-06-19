@@ -3,13 +3,8 @@
 
 {% block content %}
 
-<div class="text-center text-white md:flex p-8 md:p-0">
-    <img
-    class="w-32 h-32 md:w-48 md:h-auto md:rounded-none mx-auto"
-    src="../../static/images/1.png"
-    alt=""
-    />
-    <div class="">
+<div class="grid grid-cols-3 gap-4">
+    <div class="text-center text-white md:flex p-8 md:p-0">
         <h5 class="">VR Rev.会員登録</h5>
         <form method="post" class="">
             {% csrf_token %}
@@ -44,6 +39,10 @@
             </div>
         </form>
     </div>
+    
+</div>
+<div class="absolute right-0">
+    <img class="" src="../../static/images/1.png" alt="" style='height:600px' />
 </div>
 
 {% endblock %}

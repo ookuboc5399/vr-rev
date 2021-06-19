@@ -11,8 +11,8 @@
     <title>VR Rev.</title>
 </head>
 
-<body class="flex flex-col min-h-screen">
-    <nav class="flex justify-end h-20 z-20 items-center space-x-4">
+<body class="flex flex-col min-h-screen bg-gray-800">
+    <nav class="flex justify-end h-20 z-20 items-center space-x-4 bg-white">
         <div>
             <a class="" href="/">HOME</a>
         </div>
@@ -21,6 +21,10 @@
         </div>
         <div>
             <a class="" href="{% url 'Blog' %}">BLOG</a>
+        </div>
+
+        <div>
+            <a class="" href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7">PRODUCT</a>
         </div>
 
         <div>
@@ -42,7 +46,7 @@
     </nav>
 
     <main class="flex-1">
-        <div class="bg-gray-800">
+        <div class="">
             {% block content %}
             {% endblock %}
         </div>
@@ -50,11 +54,10 @@
 
     <footer class="">
         <div class="flex justify-center ">
-            <img class="h-32" src="../static/images/VR Rev.2.png">
+            <img class="h-32" src="{% static 'images/VR_Rev.2.png' %}">
         </div>
         <div class="flex space-x-4 m-4">
-            <a href="/">CONTACT</a>
-            <a href="/">よくあるご質問</a>
+            <a href="{% url 'question' %}">よくあるご質問</a>
             <a href="/">プライバシーポリシー</a>
         </div>
     </footer>

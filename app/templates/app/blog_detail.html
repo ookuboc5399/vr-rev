@@ -1,18 +1,76 @@
 {% extends "app/base.html" %}
 
 {% block content %}
-
-<h2 class="my-4">{{ post_data.title }}</h2>
-<hr>
-<p>{{ post_data.created }} by {{ post_data.author }}</p>
-<hr>
-<p>{{ post_data.content|linebreaksbr }}</p>
-{% if user.is_authenticated %}
-    <hr>
-    <div class="d-flex mb-5">
-        <a class="btn btn-warning mr-2" href="">編集する</a>
-        <a class="btn btn-danger" href="">削除する</a>    
+<div class="grid grid-cols-3 gap-4">
+    <div class="col-span-2">
+        <h2 class="my-4">{{ post_data.title }}</h2>
+        <hr>
+        <p>{{ post_data.created }} by {{ post_data.author }}</p>
+        <hr>
+        <div>
+            <img class="w-full h-96 object-cover" src="{{ post.image.url }}" alt="">
+        </div>
+        <p class="bg-white">{{ post_data.content|linebreaksbr }}</p>
     </div>
-{% endif %}
+    <div class="bg-white p-8">
+        <span class="">ピックアップ記事</span>
+        <ul class="editors-choice-widget__list">
+            <li class="text-3xl border p-8">
+                <a href="/news/goldman-sachs-analysts-divided-over-whether-bitcoin-is-an-investable-asset-class" class="editors-choice-widget__link"> 
+                    ビットコインは「投資可能な資産クラス」か、ゴールドマンサックスのアナリストでも意見分かれる 
+                </a>
+            </li>
+            <li class="text-2xl p-8">
+                <a href="" class=""> 
+                    【追記あり】デジタル庁、重点計画の中でブロックチェーンに言及　国の成長戦略にはNFTやセキュリティトークンも明記 
+                </a>
+            </li>
+            <li class="text-2xl p-8">
+                <a href="" class=""> 
+                    【訂正あり】米仮想通貨取引所コインベース、ついに日本に上陸 ｜ 暗号資産交換業者の登録完了 
+                </a>
+            </li>
+            <li class="text-2xl p-8">
+                <a href="" class="">
+                     1BTC=1000万円超の大相場予見する声相次ぐ 今後のビットコイン価格予想 総まとめ【2021年4月最新】 
+                </a>
+            </li>
+            <li class="text-2xl p-8">
+                <a href="" class=""> 
+                    ブロックチェーン (Blockchain)とは｜仕組みや技術、種類など解説 
+                </a>
+            </li>
+        </ul>
+        <div class="object-cover">
+            <div class="">
+                <div class="banner-youtube _2zhhTAE6iuzvUxDhI_rQPf">
+                    <div data-v-25b074ab="" class="youtube-header banner-youtube__header">
+                        <span data-v-25b074ab="" title="もっとビデオを見よう" class="youtube-header__headline"> 
+                            もっとビデオを見よう 
+                        </span>
+                        <a data-v-25b074ab="" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCfFJa_FmD0qrZRF6NFGAjSQ" class="btn youtube-header__btn">
+                            <span data-v-25b074ab="" class="btn__wrp">
+                                <span data-v-25b074ab="" class="btn__icon youtube-header__icon">
+                                </span>
+                                <span data-v-25b074ab="" class="btn__cap"> 
+                                    チャンネル登録 
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="youtube-autoplay banner-youtube__video youtube-autoplay_shown">
+                        <iframe id="youtube-eG_iXe90yPU-BannerYoutube" class="youtube-autoplay__iframe" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="300" height="200" src="https://www.youtube.com/embed/eG_iXe90yPU?autoplay=0&amp;cc_load_policy=3&amp;controls=1&amp;disablekb=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;loop=1&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fjp.cointelegraph.com&amp;widgetid=3" data-gtm-yt-inspected-7286441_727="true" data-gtm-yt-inspected-7286441_728="true" data-gtm-yt-inspected-1_25="true">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
 
 {% endblock %}
