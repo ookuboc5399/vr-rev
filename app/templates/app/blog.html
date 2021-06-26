@@ -1,7 +1,7 @@
 {% extends "app/base.html" %}
 
 {% block content %}
-<div class="container lg:max-w-4xl mx-auto">
+<div class="container lg:max-w-4xl mx-auto my-8">
     {% for post in post_data %}
         {% if forloop.last %}
             <div class="bg-white">
@@ -17,24 +17,20 @@
                         <div class="bg-yellow-400 text-2xl p-3 m-4">
                             {{post.category}}
                         </div>
-       
                     </div>
                 </div>
             </a>
 
             <div class="p-3">
-                <p>
-                    日付:{{ post.created|date }} 
-                </p>
-                <h2>
+                <h2 class="text-4xl pb-4">
                     {{ post.title }}
                 </h2>
-                <p>
-                    {{ post.content|truncatechars:100 }}
-                </p>
                 <a href="{% url 'post_detail' post.id %}">
-                    <button class="bg-blue-500">続きを読む</button>
+                    <button class="underline text-2xl">記事を読む</button>
                 </a>
+                <p class="text-right text-2xl">
+                    日付:{{ post.created|date }} 
+                </p>
             </div>
             
     
@@ -65,6 +61,15 @@
         </div>
     </div>
 </div>
+
+
+
+
+                <p>
+                    {{ post.content|truncatechars:100 }}
+                </p>
+
+
 
 -->
 {% endblock %}

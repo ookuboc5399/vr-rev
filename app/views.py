@@ -1,8 +1,11 @@
 from django.views.generic import View
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from app.models import Blog,Product
-from .forms import ContactForm
+from .forms import ContactForm,SearchForm
 from django.core.mail import BadHeaderError, EmailMessage
+from django.http import HttpResponse
+from django.conf import settings
+import textwrap
 
 
 class IndexView(View):
@@ -94,5 +97,13 @@ class CONTACTView(View):
 
 class QUESTIONView(View):
     def get(self, request, *args, **kwargs):
+        form = SearchForm(request.POST or None)
+
         return render(request, 'app/question.html', {
+            'form': form
+        })
+
+class PRIVACYView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'app/privacy.html', {
         })

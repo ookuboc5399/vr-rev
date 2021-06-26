@@ -1,20 +1,27 @@
 {% extends "app/base.html" %}
 
 {% block content %}
-<div class="grid grid-cols-3 gap-4">
-    <div class="col-span-2">
-        <h2 class="my-4">{{ post_data.title }}</h2>
-        <hr>
-        <p>{{ post_data.created }} by {{ post_data.author }}</p>
-        <hr>
-        <div>
-            <img class="w-full h-96 object-cover" src="{{ post.image.url }}" alt="">
+<div class="grid grid-cols-3 gap-4 m-12">
+    <div class="col-span-2 bg-white">
+
+
+        <div class="relative">
+            <img class="w-full h-96 object-contain" src="{{ post_data.image.url }}">
+            <div class="absolute bottom-0 right-0">
+                <div class=" bg-yellow-400 text-2xl p-3 m-4">
+                    {{post_data.category}}
+                </div>
+            </div>
         </div>
-        <p class="bg-white">{{ post_data.content|linebreaksbr }}</p>
+        <h2 class="my-4 ml-4 text-4xl ">{{ post_data.title }}</h2>
+        <p class="mx-4 text-right text-xl"> {{ post_data.author }}</p>
+        <p class="mx-4 text-right  text-xl">{{ post_data.created }}</p>
+        
+        <p class="text-2xl m-4 tracking-wide">{{ post_data.content|linebreaksbr }}</p>
     </div>
-    <div class="bg-white p-8">
+    <div class="bg-white p-8 h-screen">
         <span class="">ピックアップ記事</span>
-        <ul class="editors-choice-widget__list">
+        <ul class="divide-y">
             <li class="text-3xl border p-8">
                 <a href="/news/goldman-sachs-analysts-divided-over-whether-bitcoin-is-an-investable-asset-class" class="editors-choice-widget__link"> 
                     ビットコインは「投資可能な資産クラス」か、ゴールドマンサックスのアナリストでも意見分かれる 

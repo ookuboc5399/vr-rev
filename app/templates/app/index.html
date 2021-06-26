@@ -3,43 +3,47 @@
 {% block content %}
 
 <!-- <div class="absolute top-0 right-0 z-10"> -->
-<div class="">
-    <img class="w-full  object-cover" src="../static/images/topdesign.png"style="height:600px">
-</div>
-<!--  
-<div class="z-0">
-    <img class="" src="../static/images/Letsjumpin.png">
-</div>
--->
-
-<div class="grid grid-cols-3 gap-4">
-    <div class="col-span-2">
-        <img class="relative" src="../static/images/topdesign.png"style="height:600px">
-    </div>
-</div>
-<div class="absolute right-0 p-8">
+<div class="md:flex pt-20">
+    <h1 class="col-start-1 row-start-1 text-9xl text-white py-20 transform rotate-90">
+        Let's jump in
+    </h1>
+    
     <div class="">
-        <li class="text-3xl border p-8">
-            <a href="/news/goldman-sachs-analysts-divided-over-whether-bitcoin-is-an-investable-asset-class" class="editors-choice-widget__link"> 
-                スティーブン・スピルバーグ監督が贈る、今から27年後の世界は現実になりつつある。ゴーグル一つですべての夢が実現する新世代のVRワールド「オアシス」。食べたり眠ったりトイレに行く以外はすべてVRワールドで過ごす、そんな未来がすぐそこまで迫っている! 
-            </a>
-        </li>
+        <img class="col-start-8 row-start-8" src="../static/images/topdesign.png"style="">
     </div>
+    
+
 </div>
+<h1 class="text-9xl text-white py-20">
+    Far beyond imagination.
+</h1>
 
 
-<div class="absolute right-0 p-8">
-    <div class="object-left">
-        <a class="text-3xl border p-8"> 
+
+ <div class="grid grid-cols-1 sm:grid-cols-2 mx-12">
+    <div class="col-start-1 row-start-1 flex sm:col-start-1 sm:row-span-1 ">
+        <div class="col-span-2">
+            <img class="relative" src="../static/images/readyplayer.jpg"style="height:600px">
+        </div>
+    </div>
+    <div class="relative z-10 col-start-2 row-start-1 px-4 pt-40 pb-3 bg-gradient-to-t from-black sm:bg-none">
+        <p class="text-3xl  text-white border p-8"> 
+            スティーブン・スピルバーグ監督が贈る、今から27年後の世界は現実になりつつある。ゴーグル一つですべての夢が実現する新世代のVRワールド「オアシス」。食べたり眠ったりトイレに行く以外はすべてVRワールドで過ごす、そんな未来がすぐそこまで迫っている! 
+        </p>
+    </div>
+    
+    <div class="relative z-10 col-start-1 row-start-2 px-4 pt-40 pb-3 bg-gradient-to-t from-black sm:bg-none">
+        <p class="text-3xl  text-white border p-8"> 
             ソードアート・オンラインといえば仮想空間へフルダイブするVRMMORPG。IBM技術によって現実となりつつある。 
-        </a>
+        </p>
     </div>
-</div>
-<div class="grid grid-cols-3 gap-4">
-    <div class="col-span-2">
-        <img class="m-8 " src="../static/images/01.jpg"style="height:900px">
-    </div>
-</div>
+    <div class="col-start-1 row-start-2 flex sm:col-start-2 sm:row-span-3">
+        <div class="col-span-2">
+            <img class="" src="../static/images/01.jpg"style="height:900px">
+        </div>
+    </div>    
+ </div>
+
 
 <div>
     <div class="m-14">
@@ -47,30 +51,51 @@
         <div class="flex cursor-pointer">
             <div class="flex-1">
                 <a href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7">
-
+                    <img class="cursor-pointer w-full object-cover h-96" src="{% static 'images/alienware.png' %}">
                 </a>
-                <img  src="{% static/images/alienware.png">
+                <ul class="text-white text-center text-2xl p-2">
+                    <li class="p-2">ALIENWAREAURORA</li>
+                    <li class="p-2">12ゲーミング</li>
+                    <li class="p-2">デスクトップ</li>
+                </ul>
             </div>
             <div class="flex-1">
-                <img href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7" src="../static/images/マウス.png">
+                <a href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7">
+                    <img class="cursor-pointer w-full object-cover h-96" src="{% static 'images/マウス.png' %}">
+                </a>
+                <ul class="text-white text-center text-2xl p-2">
+                    <li class="p-2">ALIENWAREAURORA</li>
+                    <li class="p-2">12ゲーミング</li>
+                    <li class="p-2">デスクトップ</li>
+                </ul>
             </div>
             <div class="flex-1 ...">
-                <img href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7" src="../static/images/モニター.png">
+                <a href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7">
+                    <img class="cursor-pointer w-full object-cover h-96" src="{% static 'images/モニター.png' %}">
+                </a>
+                <ul class="text-white text-center text-2xl p-2">
+                    <li class="p-2">ALIENWAREAURORA</li>
+                    <li class="p-2">12ゲーミング</li>
+                    <li class="p-2">デスクトップ</li>
+                </ul>
             </div>
-          </div>
-          <div class="text-center">
-            <button class="bg-white hover:bg-blue-500 text-black font-semibold hover:text-white py-2 px-4  m-8 border border-black hover:border-transparent rounded-full py-3 px-6">
-                もっと見る
-            </button>
         </div>
     </div>
 </div>
-<div class="">
-        <p class="h-30"  >
-            <span>
-                <img class="w-full object-cover h-96" src="../static/images/pcgamingshop.png">
-            </span>
-        </p>
+<div>
+    <div class="text-center bg-white hover:bg-blue-500 text-black font-semibold hover:text-white py-2 px-4  m-8 border border-black hover:border-transparent rounded-full py-3 px-6">
+        <button onclick="location.href='https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7'">
+            もっと見る
+        </button>
+    </div>
+</div>
+
+
+<div class=""  >
+    <a href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7">
+        <img class="cursor-pointer w-full object-cover h-96" src="{% static 'images/fotter_pcgame.png' %}">
+    </a>
+
 </div>
 
 {% endblock %}
