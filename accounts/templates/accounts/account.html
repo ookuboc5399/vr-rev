@@ -5,10 +5,10 @@
 {% block content %}
 
 <div class="flex">
-    <div class="flex-1 text-3xl text-white top-1 left-1">
+    <div class="text-3xl text-white top-1 left-1">
         VR Rev.会員登録
     </div>
-    <div class="flex-1 text-3xl bg-blue-500 mx-auto w-full">
+    <div class="text-3xl bg-blue-500 mx-auto">
         <div class="">
             <form method="post">
                 {% csrf_token %}
@@ -44,7 +44,7 @@
             </form>
         </div>  
     </div>
-    <div class="flex-1">
+    <div class="">
         <img class="bg-white" src="{% static 'images/1.png' %}">
     </div>
 </div>
