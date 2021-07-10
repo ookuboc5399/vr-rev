@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sites', # 追加
     'allauth', # 追加
     'allauth.account', # 追加
-    'allauth.socialaccount'
+    'allauth.socialaccount',
+    'cloudinary', # 追加
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +156,11 @@ import django_heroku
 
 # 一番下に追加
 django_heroku.settings(locals())
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# 追加
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dkcnd4e9p',
+    'API_KEY': '942743765996557',
+    'API_SECRET': 'tfZRrdKwe0X7SnFQnbHgZ-NATec'
+}
