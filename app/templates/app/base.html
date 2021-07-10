@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
     <title>VR Rev.</title>
 </head>
 
@@ -20,21 +20,22 @@
     </div>
     <nav class="flex justify-end h-20 z-20 items-center space-x-4 bg-white text-xl">
         <div>
-            <a class="" href="/">HOME</a>
+            <a class="" href="/">ホーム</a>
         </div>
         <div>
-            <a class="" href="{% url 'Concept' %}">CONCEPT</a>
+            <a class="" href="{% url 'Concept' %}">コンセプト</a>
         </div>
         <div>
-            <a class="" href="{% url 'Blog' %}">BLOG</a>
-        </div>
-
-        <div>
-            <a class="" href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7">PRODUCT</a>
+            <a class="" href="{% url 'Blog' %}">ブログ</a>
         </div>
 
         <div>
-            <a class="" href="{% url 'contact' %}">CONTACT</a>
+            <a class="" href="https://pcgameingshop.myshopify.com/?key=6abdc476a99497082b1aae32a86b08214eb0df11b465b292043e8878835101b7">ショップ</a>
+            <i class="fas fa-external-link-alt"></i>
+        </div>
+
+        <div>
+            <a class="" href="{% url 'contact' %}">お問い合わせ</a>
         </div>
 
         {% if user.is_authenticated %}
@@ -43,7 +44,7 @@
         </div>
         {% else %}
         <div>
-            <a class="" href="{% url 'account_signup' %}">ACCOUNT</a>
+            <a class="" href="{% url 'account_signup' %}">会員登録</a>
         </div>
         <div class="pr-8">
             <a class="" href="{% url 'account_login' %}">ログイン</a>
@@ -58,7 +59,7 @@
         </div>
     </main>
 
-    <footer class="">
+    <footer class="text-white">
         <div class="flex justify-center ">
             <img class="h-32" src="{% static 'images/VR_Rev.2.png' %}">
         </div>

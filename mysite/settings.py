@@ -149,3 +149,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST_USER = 'xxx@gmail.com'
 # EMAIL_HOST_PASSWORD = 'xxx'
 # EMAIL_USE_TLS = True
+
+import django_heroku　# 追加
+
+# 一番下に追加
+django_heroku.settings(locals())

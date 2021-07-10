@@ -17,7 +17,7 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="align-items-center">
-                    {% render_field form.title class="border-black " placeholder="キーワードから探す" %}
+                    {% render_field form.title class="border border-black " placeholder="キーワードから探す" %}
                     <button class="g-white hover:bg-blue-500 font-semibold hover:text-white py-1 px-1  mb-4 border border-black hover:border-transparent rounded-full py-1 px-6" type="submit">検索</button>    
                 </div>
             </form>
